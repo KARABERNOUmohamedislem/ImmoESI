@@ -1,11 +1,14 @@
 public class Wilaya {
     private String NomWilaya;
-    private int Prix_me;
+    private float PrixMe;
 
     public Wilaya(String NomWilaya,int prix)
     {
         this.NomWilaya=NomWilaya;
-        this.Prix_me=prix;
+        this.PrixMe=prix;
     }
 
+    public float getPrixMe() {
+        return PrixMe;
+    }
 }

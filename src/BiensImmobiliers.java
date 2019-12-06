@@ -23,6 +23,19 @@ public class BiensImmobiliers {
         this.date=date;
         this.urlphoto=urlphoto;
     }
+    public void afficherBien()
+    {
+        this.wilaya.afficherNomWilaya();
+        System.out.println("Superficie : "+ this.superficie);
+        System.out.println("Date d'ajout : "+this.date);
+        System.out.println("Description : "+this.description);
+        System.out.print("Nature de transaction voulu : ");
+        this.natureTransaction.afficherNature();
+        System.out.println("Prix : "+this.PrixAgence);
+        if (this.negociable) System.out.println("Negociable");
+        else System.out.println("Non Negociable");
+
+    }
 
     public Wilaya getWilaya() {
         return wilaya;
@@ -32,4 +45,7 @@ public class BiensImmobiliers {
         return PrixPropose;
     }
 
+    public int getSuperficie() {
+        return superficie;
+    }
 }

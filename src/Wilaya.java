@@ -11,4 +11,8 @@ public class Wilaya {
     public float getPrixMe() {
         return PrixMe;
     }
+    public void afficherNomWilaya()
+    {
+        System.out.println("Wilaya : "+this.NomWilaya);
+    }
 }

@@ -1,9 +1,15 @@
 public class Avendre extends NatureTransaction {
+    private static Nature nature=Nature.Avendre;
+    @Override
+    public void afficherNature() {
+        System.out.println(nature);
+    }
+
     private float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
     {   float prixPropose=biensImmobiliers.getPrixPropose(),prixCalcule=prixPropose,prixME=biensImmobiliers.getWilaya().getPrixMe();
         if(prixPropose<5000000)
         {
-            if prixME<50000)prixCalcule += 0.03 * prixPropose;
+            if( prixME < 50000) prixCalcule += 0.03 * prixPropose;
             else prixCalcule += 0.035 * prixPropose ;
         }
         else if (prixPropose < 15000000)
@@ -29,12 +35,17 @@ public class Avendre extends NatureTransaction {
     public float calculerPrix(Maison maison) {
         float prixPropose=maison.getPrixPropose(),prixCalcule;
         prixCalcule=calculerPrixGenerale(maison);
-
-        return 0;
+        if (maison.isGarage() || maison.isJardin() || maison.isPiscine()) prixCalcule += 0.005 * prixPropose;
+        return prixCalcule;
     }
+
 
     @Override
     public float calculerPrix(Inhabitable inhabitable) {
-        return 0;
+        float prixPropose=inhabitable.getPrixPropose(),prixCalcule;
+        prixCalcule=calculerPrixGenerale(inhabitable);
+        int a=inhabitable.getNbrFacade();
+        if ( a > 1 ) prixCalcule += 0.005*prixPropose* a;
+        return prixCalcule;
     }
 }

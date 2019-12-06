@@ -1,16 +1,49 @@
 public class Location extends NatureTransaction {
+    private static Nature nature=Nature.Location;
     @Override
-    public int calculerPrix(Appartement appartement) {
-        return 0;
+    public void afficherNature() {
+        System.out.println(nature);
+    }
+
+    private float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
+    { float prixPropose=biensImmobiliers.getPrixPropose(),prixCalcule=prixPropose,prixME=biensImmobiliers.getWilaya().getPrixMe();
+        float superficie=biensImmobiliers.getSuperficie();
+        if (superficie < 60)
+        {
+            if (prixME<50000) prixCalcule+= 0.001 *prixPropose;
+            else prixCalcule+= 0.0015 *prixPropose;
+        }
+        else if (superficie<150)
+        {
+            if (prixME<50000) prixCalcule+= 0.002 *prixPropose;
+            else prixCalcule+= 0.0025 *prixPropose;
+        }
+        else
+        {
+            if (prixME<50000) prixCalcule+= 0.003 *prixPropose;
+            else prixCalcule+= 0.0035 *prixPropose;
+        }
+        return prixCalcule;
+    }
+    @Override
+    public float calculerPrix(Appartement appartement) {
+        float prixPropose=appartement.getPrixPropose(),prixCalcule=calculerPrixGenerale(appartement);
+        int etage=appartement.getEtage(),superficie=appartement.getSuperficie();
+        boolean ascen=appartement.isAscenseur();
+        if (etage<=2) prixCalcule +=50000;
+        else if (etage>= 6 && !ascen)prixCalcule -= 500*superficie;
+        return prixCalcule;
     }
 
     @Override
-    public int calculerPrix(Maison maison) {
-        return 0;
+    public float calculerPrix(Maison maison) {
+        float prixPropose=maison.getPrixPropose(),prixCalcule=calculerPrixGenerale(maison);
+        if (maison.isPiscine()) prixCalcule+=50000;
+        return prixCalcule;
     }
 
     @Override
-    public int calculerPrix(Inhabitable inhabitable) {
-        return 0;
+    public float calculerPrix(Inhabitable inhabitable) {
+        return calculerPrixGenerale(inhabitable);
     }
 }

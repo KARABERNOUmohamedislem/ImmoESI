@@ -16,4 +16,33 @@ public class Maison extends Habitable {
 
     }
 
+    @Override
+    public void afficherBien() {
+        super.afficherBien();
+        System.out.println("Type du l'habitable : Maison");
+        System.out.println("Les informations supplementaires sur la maison : ");
+        System.out.println("Le nombre d'etage de la maison : "+this.nbrEtage);
+        System.out.println("Piscine : ");
+        if (this.piscine) System.out.println("Oui");
+        else System.out.println("Non");
+        System.out.println("Garage : ");
+        if (this.garage) System.out.println("Oui");
+        else System.out.println("Non");
+        System.out.println("Jardin : ");
+        if (this.jardin) System.out.println("Oui");
+        else System.out.println("Non");
+        if (this.jardin || this.piscine || this.garage) System.out.println("Superficie totale : "+this.superficieHabitable);
+    }
+
+    public boolean isGarage() {
+        return garage;
+    }
+
+    public boolean isJardin() {
+        return jardin;
+    }
+
+    public boolean isPiscine() {
+        return piscine;
+    }
 }

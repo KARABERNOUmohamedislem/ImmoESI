@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/TP Poo/Wilaya.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Avendre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Echange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/natureTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appartement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appartement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BiensImmobiliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BiensImmobiliers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Habitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Habitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inhabitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inhabitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Wilaya.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wilaya.java" afterDir="false" />
-    </list>
+    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

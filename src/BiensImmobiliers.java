@@ -10,14 +10,13 @@ public class BiensImmobiliers {
     private String date;
     private String[] urlphoto;
 
-    public BiensImmobiliers(Wilaya wilaya,int superficie,Proprietaire proprietaire,NatureTransaction natureTransaction, int prixPropose,int prixAgence,boolean negociable,String description,String date,String[] urlphoto)
+    public BiensImmobiliers(Wilaya wilaya,int superficie,Proprietaire proprietaire,NatureTransaction natureTransaction, int prixPropose,boolean negociable,String description,String date,String[] urlphoto)
     {
         this.wilaya=wilaya;
         this.superficie=superficie;
         this.proprietaire=proprietaire;
         this.natureTransaction=natureTransaction;
         this.PrixPropose=prixPropose;
-        this.PrixAgence=prixAgence;
         this.negociable=negociable;
         this.description=description;
         this.date=date;
@@ -36,6 +35,7 @@ public class BiensImmobiliers {
         else System.out.println("Non Negociable");
 
     }
+
 
     public Wilaya getWilaya() {
         return wilaya;

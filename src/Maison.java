@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Maison extends Habitable {
     private int nbrEtage;
     private boolean garage;
@@ -5,18 +7,22 @@ public class Maison extends Habitable {
     private boolean piscine;
     private int superficieHabitable;
 
-    public Maison(Wilaya wilaya,int superficie,Proprietaire proprietaire,NatureTransaction natureTransaction,int prixPropose,boolean negociable,String description,String date,String[] urlphoto,int nb_pieces,boolean meuble,int nbr_etage,boolean garage,boolean jardin,boolean piscine,int superficie_habitable)
-    {
-        super(wilaya, superficie, proprietaire,natureTransaction, prixPropose, negociable, description, date, urlphoto, nb_pieces, meuble);
-        this.nbrEtage=nbr_etage;
-        this.garage=garage;
-        this.jardin=jardin;
-        this.piscine=piscine;
-        this.superficieHabitable=superficie_habitable;
+  
 
-    }
+    public Maison(Wilaya wilaya, int superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+			float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,
+			int nbPieces, boolean meuble, int nbrEtage, boolean garage, boolean jardin, boolean piscine,
+			int superficieHabitable) {
+		super(wilaya, superficie, proprietaire, natureTransaction, prixPropose,  negociable, description,
+				date, urlphoto, nbPieces, meuble);
+		this.nbrEtage = nbrEtage;
+		this.garage = garage;
+		this.jardin = jardin;
+		this.piscine = piscine;
+		this.superficieHabitable = superficieHabitable;
+	}
 
-    @Override
+	@Override
     public void afficherBien() {
         super.afficherBien();
         System.out.println("Type du l'habitable : Maison");

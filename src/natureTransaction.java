@@ -1,8 +1,13 @@
-abstract class NatureTransaction {
+abstract class NatureTransaction extends Critere {
     private Nature nature;
-    abstract public float calculerPrix(Appartement appartement);
-    abstract public float calculerPrix(Maison maison);
-    abstract public float calculerPrix(Inhabitable inhabitable);
+    public float calculerPrix(BiensImmobiliers b) {return 0;}
     abstract public void afficherNature();
+	public Nature getNature() {
+		return nature;
+	}
+	public void setNature(Nature nature) {
+		this.nature = nature;
+	}
+    
 
 }

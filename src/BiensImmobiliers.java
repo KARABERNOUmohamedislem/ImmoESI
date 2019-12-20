@@ -43,7 +43,7 @@ public class BiensImmobiliers {
 
 	public void afficherBien()
     {
-		
+		System.out.println("------------------------------");
         this.wilaya.afficherNomWilaya();
         System.out.println("Superficie : "+ this.superficie);
         System.out.println("Date d'ajout : "+this.date);
@@ -54,7 +54,7 @@ public class BiensImmobiliers {
         System.out.println("prix p " +this.PrixPropose);
         if (this.negociable) System.out.println("Negociable");
         else System.out.println("Non Negociable");
-        System.out.println("------------------------------");
+
     }
 
 

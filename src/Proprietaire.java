@@ -33,10 +33,6 @@ public class Proprietaire {
 		this.listBienPossede = listBienPossede;
 	}
 
-
-
-
-
 	public void ajouteBien(BiensImmobiliers arg)
     {
     	this.listBienPossede.add(arg);
@@ -49,13 +45,6 @@ public class Proprietaire {
     	System.out.println("email: "+this.Email);
     	System.out.println("address: "+this.Address);
     }
-    
-    
-    
-    
-    
-
-
 
 	@Override
 	public boolean equals(Object obj) {

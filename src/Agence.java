@@ -104,20 +104,14 @@ public void ajouterProp(Proprietaire p)
 
 
 public void ajouterBien(BiensImmobiliers arg) 
-{   
-	
-	
-	
-	
-    int x= this.listBien.size(); 
+{
+    int x= this.listBien.size();
+    arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
 	this.listBien.add(x, arg);
 	this.trierBien();
 	Proprietaire p=arg.getProprietaire();
 	p.ajouteBien(arg);
 	this.ajouterProp(p);
-	
-	
-	
 }
 
 public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g ,Date h, String[] i )
@@ -129,7 +123,6 @@ public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,flo
 	this.trierBien();
 	c.ajouteBien(bien);
 	this.ajouterProp(c);
-	
 }
 
 public void trierBien()
@@ -150,7 +143,7 @@ public void trierBien()
 
 
 
-/*public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  //fiha problem !!!
+public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  //fiha problem !!!
 {
 	boolean a;
 	if(arg.getN()==arg2.getNatureTransaction().getNature())
@@ -162,7 +155,7 @@ public void trierBien()
 		a=false;
 	}
 	return a;
-}*/
+}
 
 
 
@@ -182,8 +175,6 @@ public boolean checkCritere(Wilaya arg , BiensImmobiliers arg2)
 	
 }
 
-
-
 public boolean checkCritere(PrixMax arg , BiensImmobiliers arg2)
 { 
 	boolean a;
@@ -199,8 +190,6 @@ public boolean checkCritere(PrixMax arg , BiensImmobiliers arg2)
 	
 	
 }
-
-
 
 public boolean checkCritere(PrixMin arg , BiensImmobiliers arg2)
 { 
@@ -290,10 +279,10 @@ public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg)
 		{	
 		a=a && this.checkCritere((NbPiece)arg[j], this.listBien.get(i));
 		}
-		/*if(arg[j] instanceof NatureTransaction)
+		if(arg[j] instanceof Cnature)
 		{	
 		a=a && this.checkCritere((Cnature)arg[j], this.listBien.get(i));
-		}*/
+		}
 		
 	}
 	if(a==true)

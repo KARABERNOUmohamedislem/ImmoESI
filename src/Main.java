@@ -19,6 +19,7 @@ public class Main {
          Wilaya w3=new Wilaya("blida",12600000);
          Date a= new Date(2015, 02, 24);
          String[] tab = {"no"};
+
          Maison m=new Maison(w, 5455, p, n, 9855, false, "jgf", a, tab, 5, false, 5, false, 	true, true, 69);       
          BiensImmobiliers b=new BiensImmobiliers(w, 15509, p, l, 55485,  false, "fffff", a, tab);
          Date a1= new Date(2015, 02, 23);
@@ -42,27 +43,28 @@ public class Main {
         ag.ajouterBien(m);
         ag.ajouterBien(b1);
         ag.ajouterBien(b2);
-        
+
+
+        ag.affichage();
+
         Critere[] cr=new Critere[10];
         NbPiece ap =new NbPiece(5);
         PrixMin pa=new PrixMin(1);
-        //Surface s=new Surface(15509);
-       // cr[0]=ap;
-        cr[0]=ap;
+        Cnature nature=new Cnature(Nature.Avendre);
+
+        cr[0]=nature;
       
         
         ArrayList<BiensImmobiliers> br = new ArrayList<BiensImmobiliers>();
         br=ag.rechercheFiltre(cr);
-       // ag.affichage(cr);
+        //ag.affichage(cr);
+
         System.out.println(br.size());
-        System.out.println();
-        System.out.println();
+
         
         
   
-     /*   System.out.println(br[0].getPrixPropose());
-        System.out.println(br[1].getPrixPropose());
-        System.out.println(br[2].getPrixPropose());*/
+
         Date[] dt=new Date[3];
         dt[0]=a;
         dt[1]=a1;
@@ -90,7 +92,7 @@ public class Main {
 System.out.println(n.calculerPrixGenerale(m));
  System.out.println(b.getPrixAgence());
  //n.afficherNature();*/
-        ag.ajouterBien(m);
+
         //ag.affichage();
       //  m.getNatureTransaction().afficherNature();
         //System.out.println(m.getNature().calculerPrix(m));

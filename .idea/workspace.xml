@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="" />
+    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Avendre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Avendre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BiensImmobiliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BiensImmobiliers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Echange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Echange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proprietaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proprietaire.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

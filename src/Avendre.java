@@ -9,7 +9,7 @@ public class Avendre extends NatureTransaction {
 		return nature;
 	} 
 
-    public float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
+    private float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
     {   float prixPropose=biensImmobiliers.getPrixPropose(),prixCalcule=prixPropose,prixME=biensImmobiliers.getWilaya().getPrixMe();
         if(prixPropose<5000000)
         {
@@ -27,7 +27,26 @@ public class Avendre extends NatureTransaction {
         }
         return prixCalcule;
     }
-   
+
+    @Override
+    public float calculerPrix(BiensImmobiliers b) {
+        float a=0;
+        if (b instanceof Appartement)
+        {
+            a= calculerPrix((Appartement)b);
+        }
+        else if (b instanceof Maison)
+        {
+            a= calculerPrix((Maison) b);
+        }
+        else if (b instanceof Inhabitable)
+        {
+            a= calculerPrix((Inhabitable) b);
+        }
+        else a=b.getPrixPropose();
+        return a;
+    }
+
     public float calculerPrix(Appartement appartement) {
        float prixPropose=appartement.getPrixPropose(), prixCalcule;
        prixCalcule=calculerPrixGenerale(appartement);

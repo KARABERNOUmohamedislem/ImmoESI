@@ -28,13 +28,13 @@ public class Maison extends Habitable {
         System.out.println("Type du l'habitable : Maison");
         System.out.println("Les informations supplementaires sur la maison : ");
         System.out.println("Le nombre d'etage de la maison : "+this.nbrEtage);
-        System.out.println("Piscine : ");
+        System.out.print("Piscine : ");
         if (this.piscine) System.out.println("Oui");
         else System.out.println("Non");
-        System.out.println("Garage : ");
+        System.out.print("Garage : ");
         if (this.garage) System.out.println("Oui");
         else System.out.println("Non");
-        System.out.println("Jardin : ");
+        System.out.print("Jardin : ");
         if (this.jardin) System.out.println("Oui");
         else System.out.println("Non");
         if (this.jardin || this.piscine || this.garage) System.out.println("Superficie totale : "+this.superficieHabitable);

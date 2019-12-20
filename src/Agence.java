@@ -1,4 +1,5 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.Date; 
 
 
 
@@ -9,14 +10,15 @@ public class Agence {
  private String nomAgence;
  private ArrayList<BiensImmobiliers> archiveBien=new ArrayList<BiensImmobiliers>();
 
- public Agence(String nomAgence,ArrayList<BiensImmobiliers> listBien, Wilaya[] listWilaya, ArrayList<Proprietaire> listProprietaire)
+ public Agence(String nomAgence, Wilaya[] listWilaya)
 {
 	this.nomAgence = nomAgence;
-	this.listBien = listBien;
 	this.listWilaya = listWilaya;
-	this.listProprietaire = listProprietaire;
+
 	
 }
+ 
+ 
  
  
  
@@ -26,18 +28,107 @@ public ArrayList<BiensImmobiliers> getListBien() {
 
 
 
-public void setListBien(ArrayList<BiensImmobiliers> listBien) {
-	this.listBien = listBien;
+public ArrayList<Proprietaire> getListProprietaire() {
+	return listProprietaire;
 }
 
 
 
-public void ajouterBien(BiensImmobiliers arg)
+public void setListProprietaire(ArrayList<Proprietaire> listProprietaire) {
+	this.listProprietaire = listProprietaire;
+}
+
+
+
+public void setListBien(ArrayList<BiensImmobiliers> listBien) {
+	this.listBien = listBien;
+}
+
+public boolean checkBien(BiensImmobiliers arg)
+
 {
-	arg.getNatureTransaction().calculerPrix(arg);
-	int i = this.listBien.size(); 
-	this.listBien.set(i, arg);
+	int i=0;
+	boolean trouv=false;
+	while((i<this.listBien.size())&&(trouv==false))
+	{
+		if (arg.equals(this.listBien.get(i)))
+		{
+			trouv=true;
+			
+		}
+		else
+		{
+			trouv=false;
+		}
+		i++;
+	}
+	return trouv;
+}
+
+
+public boolean checkProp(Proprietaire p)
+{
+	int i=0;
+	boolean trouv=false;
+	while((i<this.listProprietaire.size())&&(trouv==false))
+	{
+	   if (p.equals(this.listProprietaire.get(i))==true)
+	   {
+		   trouv=true;
+	   }
+	   else
+	   {
+		   trouv=false;
+	   }
+	   i++;
+	}
+	return trouv;
+}
+
+
+
+public void ajouterProp(Proprietaire p)
+{
+	int x=this.listProprietaire.size();
+	if(this.checkProp(p)==false)
+	{
+		this.listProprietaire.add(x, p);
+	}
+	else
+	{
+		System.out.println("already exisits");
+	}
+}
+
+
+
+
+public void ajouterBien(BiensImmobiliers arg) 
+{   
+	
+	
+	
+	
+    int x= this.listBien.size(); 
+	this.listBien.add(x, arg);
 	this.trierBien();
+	Proprietaire p=arg.getProprietaire();
+	p.ajouteBien(arg);
+	this.ajouterProp(p);
+	
+	
+	
+}
+
+public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g ,Date h, String[] i )
+{
+	BiensImmobiliers bien=new BiensImmobiliers(a, b, c, d, e, f, g, h, i);
+	//bien.getNatureTransaction.calculerPrix(bien);
+	int x =this.listBien.size();
+	this.listBien.add(x,bien);
+	this.trierBien();
+	c.ajouteBien(bien);
+	this.ajouterProp(c);
 	
 }
 
@@ -57,30 +148,12 @@ public void trierBien()
 	}
 }
 
-/*public BiensImmobiliers rechercherBien(BiensImmobiliers arg)
-{
-	int i=0;
-	boolean trouv=false;
-	while( (i<listBien.size()) && (trouv==false))
-	{
-		if(arg==listBien.get(i))
-		{
-			
-			trouv=true;
-			return listBien.get(i);
-		}
-		else
-		{
-		i++;
-		}
-	}
-	
-}*/
 
-public boolean checkCritere(NatureTransaction  arg , BiensImmobiliers arg2) 
+
+/*public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  //fiha problem !!!
 {
 	boolean a;
-	if(arg.getNature()==arg2.getNatureTransaction().getNature())
+	if(arg.getN()==arg2.getNatureTransaction().getNature())
 	{
 		a=true;
 	}
@@ -89,7 +162,7 @@ public boolean checkCritere(NatureTransaction  arg , BiensImmobiliers arg2)
 		a=false;
 	}
 	return a;
-}
+}*/
 
 
 
@@ -190,10 +263,10 @@ public boolean checkCritere(NbPiece arg , BiensImmobiliers arg2)
 }
 
 
-public BiensImmobiliers[] rechercheFiltre(Critere [] arg)
+public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg)
 {
 	boolean a=true;
-	BiensImmobiliers[] tab =new BiensImmobiliers[50];
+	ArrayList<BiensImmobiliers> tab = new ArrayList<BiensImmobiliers>();
   int i=0;
   int j=0 ;
   int k=0;
@@ -217,15 +290,15 @@ public BiensImmobiliers[] rechercheFiltre(Critere [] arg)
 		{	
 		a=a && this.checkCritere((NbPiece)arg[j], this.listBien.get(i));
 		}
-		if(arg[j] instanceof NatureTransaction)
+		/*if(arg[j] instanceof NatureTransaction)
 		{	
-		a=a && this.checkCritere((NatureTransaction)arg[j], this.listBien.get(i));
-		}
+		a=a && this.checkCritere((Cnature)arg[j], this.listBien.get(i));
+		}*/
 		
 	}
 	if(a==true)
 	{
-		tab[k]=this.listBien.get(i);
+		tab.add(k, this.listBien.get(i));
 		k++;
 	}else
 	{
@@ -239,22 +312,71 @@ public BiensImmobiliers[] rechercheFiltre(Critere [] arg)
 
 
 
-public void modifierBien(BiensImmobiliers arg) // verifi si on peut modifier un paramatre oui on peut
+public void modifierBien(BiensImmobiliers arg,Wilaya wilaya, float superficie, Proprietaire proprietaire,
+		NatureTransaction natureTransaction, float prixPropose,  boolean negociable,
+		String description, Date date, String[] urlphoto) // verifi si on peut modifier un paramatre oui on peut
 {
-	
+	arg.modifier(wilaya, superficie, proprietaire, natureTransaction, prixPropose, negociable, description, date, urlphoto);
 }
 
 
-public void archiveBien(BiensImmobiliers arg)
-{
-	
-}
 
 public void afficherBienProp(Proprietaire arg)
-{
+{ 
+	int i;
+	for(i=0;i<arg.getListBienPossede().size();i++)
+	{
+		arg.getListBienPossede().get(i).afficherBien();
+	}
 	
 }
 
+public void supprimerBien(BiensImmobiliers arg)
+{
+	int i =0;
+	boolean trouv=false;
+	while((i<this.listBien.size())&&(trouv==false))
+	{
+		if(arg.equals(this.listBien.get(i)))
+		{
+			trouv=true;
+			this.listBien.remove(i);
+			
+		}
+		i++;
+	}
+	
+}
+
+
+public void archiverBien(BiensImmobiliers arg)
+{
+    if (this.checkBien(arg)==true)
+    {
+	int j=this.archiveBien.size();
+	this.archiveBien.add(j, arg);
+	this.supprimerBien(arg);
+    }
+	
+}
+
+public void affichage(Critere[] arg)
+{
+	ArrayList<BiensImmobiliers > b=this.rechercheFiltre(arg);
+	int i;
+	for(i=0;i<b.size();i++)
+	{
+		b.get(i).afficherBien();
+	}
+}
+
+public void affichage()
+{
+	for(int i=0;i<this.listBien.size();i++)
+	{
+		this.listBien.get(i).afficherBien();
+	}
+}
 
 
 

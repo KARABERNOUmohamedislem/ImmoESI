@@ -6,7 +6,7 @@ public class Habitable extends BiensImmobiliers {
 
     
 
-    public Habitable(Wilaya wilaya, int superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,int nbPieces, boolean meuble) {
+    public Habitable(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,int nbPieces, boolean meuble) {
 		super(wilaya, superficie, proprietaire, natureTransaction, prixPropose,  negociable, description,date, urlphoto);
 		this.nbPieces = nbPieces;
 		this.meuble = meuble;

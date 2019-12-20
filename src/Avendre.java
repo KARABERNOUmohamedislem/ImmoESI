@@ -1,11 +1,15 @@
 public class Avendre extends NatureTransaction {
     private static Nature nature=Nature.Avendre;
+    
     @Override
     public void afficherNature() {
         System.out.println(nature);
     }
+    public Nature getNature() {
+		return nature;
+	} 
 
-    private float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
+    public float calculerPrixGenerale(BiensImmobiliers biensImmobiliers)
     {   float prixPropose=biensImmobiliers.getPrixPropose(),prixCalcule=prixPropose,prixME=biensImmobiliers.getWilaya().getPrixMe();
         if(prixPropose<5000000)
         {
@@ -23,7 +27,7 @@ public class Avendre extends NatureTransaction {
         }
         return prixCalcule;
     }
-    @Override
+   
     public float calculerPrix(Appartement appartement) {
        float prixPropose=appartement.getPrixPropose(), prixCalcule;
        prixCalcule=calculerPrixGenerale(appartement);
@@ -31,7 +35,7 @@ public class Avendre extends NatureTransaction {
        return prixCalcule;
     }
 
-    @Override
+    
     public float calculerPrix(Maison maison) {
         float prixPropose=maison.getPrixPropose(),prixCalcule;
         prixCalcule=calculerPrixGenerale(maison);
@@ -40,7 +44,7 @@ public class Avendre extends NatureTransaction {
     }
 
 
-    @Override
+    
     public float calculerPrix(Inhabitable inhabitable) {
         float prixPropose=inhabitable.getPrixPropose(),prixCalcule;
         prixCalcule=calculerPrixGenerale(inhabitable);

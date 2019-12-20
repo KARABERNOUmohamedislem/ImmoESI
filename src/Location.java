@@ -25,24 +25,24 @@ public class Location extends NatureTransaction {
         }
         return prixCalcule;
     }
-    @Override
+    
     public float calculerPrix(Appartement appartement) {
         float prixPropose=appartement.getPrixPropose(),prixCalcule=calculerPrixGenerale(appartement);
-        int etage=appartement.getEtage(),superficie=appartement.getSuperficie();
+        float etage=appartement.getEtage(),superficie=appartement.getSuperficie();
         boolean ascen=appartement.isAscenseur();
         if (etage<=2) prixCalcule +=50000;
         else if (etage>= 6 && !ascen)prixCalcule -= 500*superficie;
         return prixCalcule;
     }
 
-    @Override
+    
     public float calculerPrix(Maison maison) {
         float prixPropose=maison.getPrixPropose(),prixCalcule=calculerPrixGenerale(maison);
         if (maison.isPiscine()) prixCalcule+=50000;
         return prixCalcule;
     }
 
-    @Override
+   
     public float calculerPrix(Inhabitable inhabitable) {
         return calculerPrixGenerale(inhabitable);
     }

@@ -6,7 +6,7 @@ public class Inhabitable extends BiensImmobiliers {
 
    
 
-    public Inhabitable(Wilaya wilaya, int superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+    public Inhabitable(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 			float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,
 			int nbrFacade, String statusJuridique) {
 		super(wilaya, superficie, proprietaire, natureTransaction, prixPropose,  negociable, description,

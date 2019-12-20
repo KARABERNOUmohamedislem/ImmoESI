@@ -9,7 +9,7 @@ public class Maison extends Habitable {
 
   
 
-    public Maison(Wilaya wilaya, int superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+    public Maison(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 			float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,
 			int nbPieces, boolean meuble, int nbrEtage, boolean garage, boolean jardin, boolean piscine,
 			int superficieHabitable) {

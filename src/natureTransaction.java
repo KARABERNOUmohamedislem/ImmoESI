@@ -1,4 +1,4 @@
-abstract class NatureTransaction extends Critere {
+	abstract class NatureTransaction extends Critere {
     private Nature nature;
     public float calculerPrix(BiensImmobiliers b) {return 0;}
     abstract public void afficherNature();

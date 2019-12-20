@@ -5,6 +5,8 @@ public class Main {
     public static void main(String[] args) {
     	Avendre n=new Avendre();
     	Location l=new Location();
+    	Echange e=new Echange();
+    
     	
     	ArrayList<BiensImmobiliers> listBien = new ArrayList<BiensImmobiliers>();
     	
@@ -17,6 +19,7 @@ public class Main {
          Wilaya w3=new Wilaya("blida",12600000);
          Date a= new Date(2015, 02, 24);
          String[] tab = {"no"};
+         Maison m=new Maison(w, 5455, p, n, 9855, false, "jgf", a, tab, 5, false, 5, false, 	true, true, 69);       
          BiensImmobiliers b=new BiensImmobiliers(w, 15509, p, l, 55485,  false, "fffff", a, tab);
          Date a1= new Date(2015, 02, 23);
          String[] tab1 = {"no"};
@@ -24,8 +27,8 @@ public class Main {
          Date a2= new Date(2015, 02, 22);
          String[] tab2 = {"no"};
          Wilaya[] listWilaya =new Wilaya[58] ;
-         BiensImmobiliers b2=new BiensImmobiliers(w, 17550, p3, n, 5545,  false, "fffff", a2, tab2);
-        listBien.add(0, b);
+         BiensImmobiliers b2=new BiensImmobiliers(w, 17550, p3, e, 5545,  false, "fffff", a2, tab2);
+      /*  listBien.add(0, b);
         listBien.add(1, b1);
         listBien.add(2,b2);
         listProprietaire.add(0, p);
@@ -33,18 +36,27 @@ public class Main {
         listProprietaire.add(2, p3);
         listWilaya[0]=w;
         listWilaya[1]=w2;
-        listWilaya[2]=w3;
+        listWilaya[2]=w3;*/
         
-        Agence ag=new Agence("wikala", listBien, listWilaya, listProprietaire);
-        Critere[] cr=new Critere[5];
-        PrixMax ap =new PrixMax(2540965);
-        PrixMin pa=new PrixMin(600);
+        Agence ag=new Agence("ffff",listWilaya);
+        ag.ajouterBien(m);
+        ag.ajouterBien(b1);
+        ag.ajouterBien(b2);
+        
+        Critere[] cr=new Critere[10];
+        NbPiece ap =new NbPiece(5);
+        PrixMin pa=new PrixMin(1);
+        //Surface s=new Surface(15509);
+       // cr[0]=ap;
         cr[0]=ap;
-        cr[1]=pa;
+      
         
-        BiensImmobiliers[] br=new BiensImmobiliers[10];
+        ArrayList<BiensImmobiliers> br = new ArrayList<BiensImmobiliers>();
         br=ag.rechercheFiltre(cr);
-        
+       // ag.affichage(cr);
+        System.out.println(br.size());
+        System.out.println();
+        System.out.println();
         
         
   
@@ -56,6 +68,7 @@ public class Main {
         dt[1]=a1;
         dt[2]=a2;
         int x;
+        //ag.supprimerBien(b);
 
 /*for (int i = 0; i < listBien.size(); i++)                     //Loop for descending ordering
 	{
@@ -69,13 +82,17 @@ public class Main {
 			}
 		}
 	}*/
-       /* ag.trierBien();*/
- for(int i=0;i<br.length;i++)
- {
-	 System.out.println("------------------------------------------------------------");
-	 br[i].afficherBien();
- }
-        
-
+      /* ag.trierBien();*/
+ //ag.modifierBien(b, w3, 6555, p2,n, 548, true, "vfvf", a2, tab2);
+ //b.afficherBien()
+//System.out.println( b.getNatureTransaction().calculerPrix(b));
+/*b.setPrixAgence(n.calculerPrix(b));
+System.out.println(n.calculerPrixGenerale(m));
+ System.out.println(b.getPrixAgence());
+ //n.afficherNature();*/
+        ag.ajouterBien(m);
+        //ag.affichage();
+      //  m.getNatureTransaction().afficherNature();
+        //System.out.println(m.getNature().calculerPrix(m));
     }
 }

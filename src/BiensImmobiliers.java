@@ -43,7 +43,6 @@ public class BiensImmobiliers {
 
 	public void afficherBien()
     {
-		System.out.println("------------------------------");
         this.wilaya.afficherNomWilaya();
         System.out.println("Superficie : "+ this.superficie);
         System.out.println("Date d'ajout : "+this.date);

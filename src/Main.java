@@ -40,30 +40,25 @@ public class Main {
         listWilaya[2]=w3;*/
         
         Agence ag=new Agence("ffff",listWilaya);
-        ag.ajouterBien(m);
+        ag.ajouterBien(w3,55545, p3, n, 255, false, "bbbb", tab2);
         ag.ajouterBien(b1);
+        ag.ajouterBien(m);
         ag.ajouterBien(b2);
 
 
-        ag.affichage();
+       // ag.affichage();
 
         Critere[] cr=new Critere[10];
         NbPiece ap =new NbPiece(5);
-        PrixMin pa=new PrixMin(1);
+        PrixMin pa=new PrixMin(999999);
         Cnature nature=new Cnature(Nature.Avendre);
 
         cr[0]=nature;
+        cr[1]=pa;
+        
       
-        
-        ArrayList<BiensImmobiliers> br = new ArrayList<BiensImmobiliers>();
-        br=ag.rechercheFiltre(cr);
-        //ag.affichage(cr);
-
-        System.out.println(br.size());
-
-        
-        
-  
+        ag.gererTransaction(m);
+        ag.afficherArchive();
 
         Date[] dt=new Date[3];
         dt[0]=a;
@@ -93,8 +88,10 @@ System.out.println(n.calculerPrixGenerale(m));
  System.out.println(b.getPrixAgence());
  //n.afficherNature();*/
 
-        //ag.affichage();
-      //  m.getNatureTransaction().afficherNature();
-        //System.out.println(m.getNature().calculerPrix(m));
+       
+      //m.getNatureTransaction().afficherNature();
+       //System.out.println(m.getNature().calculerPrix(m));
+        Date g=new Date();
+        System.out.println(g);
     }
 }

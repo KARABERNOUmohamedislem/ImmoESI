@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import java.util.Date; 
+import java.util.Date;
+import java.util.Scanner; 
 
 
 
@@ -87,44 +88,6 @@ public boolean checkProp(Proprietaire p)
 
 
 
-public void ajouterProp(Proprietaire p)
-{
-	int x=this.listProprietaire.size();
-	if(this.checkProp(p)==false)
-	{
-		this.listProprietaire.add(x, p);
-	}
-	else
-	{
-		System.out.println("already exisits");
-	}
-}
-
-
-
-
-public void ajouterBien(BiensImmobiliers arg) 
-{
-    int x= this.listBien.size();
-    arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
-	this.listBien.add(x, arg);
-	this.trierBien();
-	Proprietaire p=arg.getProprietaire();
-	p.ajouteBien(arg);
-	this.ajouterProp(p);
-}
-
-public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g ,Date h, String[] i )
-{
-	BiensImmobiliers bien=new BiensImmobiliers(a, b, c, d, e, f, g, h, i);
-	//bien.getNatureTransaction.calculerPrix(bien);
-	int x =this.listBien.size();
-	this.listBien.add(x,bien);
-	this.trierBien();
-	c.ajouteBien(bien);
-	this.ajouterProp(c);
-}
-
 public void trierBien()
 {
 	for (int i = 0; i < this.listBien.size(); i++)                     //Loop for descending ordering
@@ -143,7 +106,119 @@ public void trierBien()
 
 
 
-public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  //fiha problem !!!
+
+
+public void ajouterProp(Proprietaire p)
+{
+	int x=this.listProprietaire.size();
+	if(this.checkProp(p)==false)
+	{
+		this.listProprietaire.add(x, p);
+	}
+	else
+	{
+		System.out.println(" already exisiting owner");
+	}
+}
+
+
+
+
+
+
+public void ajouterBien(BiensImmobiliers arg) 
+{
+    int x= this.listBien.size();
+    arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
+	this.listBien.add(x, arg);
+	this.trierBien();
+	Proprietaire p=arg.getProprietaire();
+	p.ajouteBien(arg);
+	this.ajouterProp(p);
+}
+
+
+
+
+
+public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g , String[] i )
+{
+	Date h =new Date(); //add with the current date
+	BiensImmobiliers bien=new BiensImmobiliers(a, b, c, d, e, f, g, h, i);
+	bien.setPrixAgence(bien.getNatureTransaction().calculerPrix(bien));
+	int x =this.listBien.size();
+	this.listBien.add(x,bien);
+	this.trierBien();
+	c.ajouteBien(bien);
+	this.ajouterProp(c);
+	this.trierBien();
+}
+
+
+
+
+
+public void ajouterMaison(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+		float prixPropose,  boolean negociable, String description,  String[] urlphoto,
+		int nbPieces, boolean meuble, int nbrEtage, boolean garage, boolean jardin, boolean piscine,
+		int superficieHabitable)
+{
+	Date h =new Date(); //add with the current date
+	Maison m=new Maison(wilaya, superficie, proprietaire, natureTransaction, prixPropose, negociable, description, h, urlphoto, nbPieces, meuble, nbrEtage, garage, jardin, piscine, superficieHabitable);
+	m.setPrixAgence(m.getNatureTransaction().calculerPrix(m));
+	int x =this.listBien.size();
+	this.listBien.add(x,m);
+	this.trierBien();
+proprietaire.ajouteBien(m);
+	this.ajouterProp(proprietaire);
+	this.trierBien();
+
+}
+
+
+
+
+
+public void ajouterAppartement(Wilaya wilaya,float superficie,Proprietaire proprietaire,NatureTransaction natureTransaction,int prixPropose,boolean negociable,String description,String[] urlphoto,int nb_pieces,boolean meuble,int etage,boolean duplex,boolean ascenseur)
+{
+	Date h =new Date(); //add with the current date
+	Appartement m=new Appartement(wilaya, superficie, proprietaire, natureTransaction, prixPropose, negociable, description, h, urlphoto, nb_pieces, meuble, etage, duplex, ascenseur);
+	m.setPrixAgence(m.getNatureTransaction().calculerPrix(m));
+	int x =this.listBien.size();
+	this.listBien.add(x,m);
+	this.trierBien();
+proprietaire.ajouteBien(m);
+	this.ajouterProp(proprietaire);
+	this.trierBien();
+
+	
+}
+
+
+
+
+
+public void ajouterTerrainInhabitable(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+			float prixPropose,  boolean negociable, String description,  String[] urlphoto,
+			int nbrFacade, String statusJuridique)
+{
+	Date h =new Date(); //add with the current date
+	Inhabitable m=new Inhabitable(wilaya, superficie, proprietaire, natureTransaction, prixPropose, negociable, description, h, urlphoto, nbrFacade, statusJuridique);
+	m.setPrixAgence(m.getNatureTransaction().calculerPrix(m));
+	int x =this.listBien.size();
+	this.listBien.add(x,m);
+	this.trierBien();
+proprietaire.ajouteBien(m);
+	this.ajouterProp(proprietaire);
+	this.trierBien();
+
+	
+}
+
+
+
+
+public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  
 {
 	boolean a;
 	if(arg.getN()==arg2.getNatureTransaction().getNature())
@@ -156,6 +231,8 @@ public boolean checkCritere(Cnature  arg , BiensImmobiliers arg2)  //fiha proble
 	}
 	return a;
 }
+
+
 
 
 
@@ -175,6 +252,9 @@ public boolean checkCritere(Wilaya arg , BiensImmobiliers arg2)
 	
 }
 
+
+
+
 public boolean checkCritere(PrixMax arg , BiensImmobiliers arg2)
 { 
 	boolean a;
@@ -190,6 +270,11 @@ public boolean checkCritere(PrixMax arg , BiensImmobiliers arg2)
 	
 	
 }
+
+
+
+
+
 
 public boolean checkCritere(PrixMin arg , BiensImmobiliers arg2)
 { 
@@ -209,6 +294,12 @@ public boolean checkCritere(PrixMin arg , BiensImmobiliers arg2)
 
 
 
+
+
+
+
+
+
 public boolean checkCritere(Surface arg , BiensImmobiliers arg2)
 { 
 	boolean a;
@@ -224,6 +315,8 @@ public boolean checkCritere(Surface arg , BiensImmobiliers arg2)
 	
 	
 }
+
+
 
 
 public boolean checkCritere(NbPiece arg , BiensImmobiliers arg2)
@@ -252,8 +345,12 @@ public boolean checkCritere(NbPiece arg , BiensImmobiliers arg2)
 }
 
 
-public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg)
+
+
+
+public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg) throws empty
 {
+	empty e=new empty();
 	boolean a=true;
 	ArrayList<BiensImmobiliers> tab = new ArrayList<BiensImmobiliers>();
   int i=0;
@@ -294,6 +391,7 @@ public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg)
 		a=true;
 	}
   }
+  if (tab.isEmpty()==true) {throw e;}
   return tab;
 }
 
@@ -303,27 +401,44 @@ public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg)
 
 public void modifierBien(BiensImmobiliers arg,Wilaya wilaya, float superficie, Proprietaire proprietaire,
 		NatureTransaction natureTransaction, float prixPropose,  boolean negociable,
-		String description, Date date, String[] urlphoto) // verifi si on peut modifier un paramatre oui on peut
+		String description, Date date, String[] urlphoto) 
 {
 	arg.modifier(wilaya, superficie, proprietaire, natureTransaction, prixPropose, negociable, description, date, urlphoto);
 }
 
 
 
+
+
 public void afficherBienProp(Proprietaire arg)
 { 
+	if (checkProp(arg)==true)
+	{
 	int i;
 	for(i=0;i<arg.getListBienPossede().size();i++)
 	{
+ 		System.out.println("************************************************************");
+
 		arg.getListBienPossede().get(i).afficherBien();
+	}
+	}
+	else
+	{
+		System.out.println("couldnt find what you are looking for");
 	}
 	
 }
+
+
+
+
 
 public void supprimerBien(BiensImmobiliers arg)
 {
 	int i =0;
 	boolean trouv=false;
+	if(checkBien(arg)==true)
+	{
 	while((i<this.listBien.size())&&(trouv==false))
 	{
 		if(arg.equals(this.listBien.get(i)))
@@ -334,8 +449,15 @@ public void supprimerBien(BiensImmobiliers arg)
 		}
 		i++;
 	}
-	
+	}
+	else
+	{
+		System.out.println("couldnt find what you are looking for");
+	}
 }
+
+
+
 
 
 public void archiverBien(BiensImmobiliers arg)
@@ -346,28 +468,106 @@ public void archiverBien(BiensImmobiliers arg)
 	this.archiveBien.add(j, arg);
 	this.supprimerBien(arg);
     }
+    else 
+    {
+    	System.out.println("couldnt find what you are looking for");
+    }
 	
 }
 
+
+
+
+
+
 public void affichage(Critere[] arg)
 {
-	ArrayList<BiensImmobiliers > b=this.rechercheFiltre(arg);
-	int i;
-	for(i=0;i<b.size();i++)
+	ArrayList<BiensImmobiliers > b= new ArrayList<BiensImmobiliers>();
+	try
 	{
-		b.get(i).afficherBien();
+     b=this.rechercheFiltre(arg);
+     int i;
+ 	for(i=0;i<b.size();i++)
+ 	{
+ 		System.out.println("************************************************************");
+ 		b.get(i).afficherBien();
+ 	}
+     
 	}
+	catch(empty e)
+	{
+		System.out.println("there's no goods that satisfy you conditions");
+	}
+	
 }
+
+
+
+
 
 public void affichage()
 {
 	for(int i=0;i<this.listBien.size();i++)
 	{
+		System.out.println("************************************************************");
 		this.listBien.get(i).afficherBien();
 	}
 }
 
 
+
+
+public void afficherArchive()
+{
+	if (this.archiveBien.size()==0)
+	{
+		System.out.println("archive vide");
+	}
+	else
+	{
+	int i ;
+	for(i=0;i<this.archiveBien.size();i++)
+	{
+		System.out.println("**************************************************************");
+		this.archiveBien.get(i).afficherBien();
+	}
+	}
+}
+
+
+
+
+public void gererTransaction(BiensImmobiliers arg)
+{
+	Scanner sc= new Scanner(System.in);
+	
+	if (checkBien(arg)==true)
+	{
+	System.out.print("ce bien est à ");
+	arg.getNatureTransaction().afficherNature();
+	System.out.println("avec prix de "+arg.getPrixAgence()+" la comession de l'agence est inclue");
+	System.out.println("si vous vouler faire de business appuyez sur 1 sinon 0");
+	int a= sc.nextInt();
+	switch (a) {
+	case 0:
+		System.out.println("merci pour votre presence à "+this.nomAgence);
+		break;
+	case 1:
+		System.out.println("merci pour accepter de faire de business avec vous  ");
+		System.out.println("pouvez  vous passez par notre local la semain prochain  pour terminer les formalités administratives ou bien nous contacter pour choisire la date qui vous arrenge ");
+		archiverBien(arg);
+		break;
+	default :
+		System.out.println("problem de saisir reesseyez svp ");
+		a=sc.nextInt();
+	}
+	}
+	else 
+	{
+		System.out.println("desole on n'a pas pu trouver ce bien dans notre liste des biens disponible");
+	}
+	
+}
 
 
  

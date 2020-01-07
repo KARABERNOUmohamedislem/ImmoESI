@@ -17,13 +17,11 @@ public class BiensImmobiliers {
     public BiensImmobiliers(Wilaya wilaya, float superficie, Proprietaire proprietaire,
 			NatureTransaction natureTransaction, float prixPropose,  boolean negociable,
 			String description, Date date, String[] urlphoto) {
-		super();
 		this.wilaya = wilaya;
 		this.superficie = superficie;
 		this.proprietaire = proprietaire;
 		this.natureTransaction = natureTransaction;
-		PrixPropose = prixPropose;
-	
+		this.PrixPropose = prixPropose;
 		this.negociable = negociable;
 		this.description = description;
 		this.date = date;
@@ -49,8 +47,21 @@ public class BiensImmobiliers {
         System.out.println("Description : "+this.description);
         System.out.print("Nature de transaction voulu : ");
         this.natureTransaction.afficherNature();
-        System.out.println("Prix : "+this.PrixAgence);
-        System.out.println("prix p " +this.PrixPropose);
+        if (this.PrixAgence >100000) {
+			System.out.println("Prix : " + this.PrixAgence/10 + " x10 DA");
+		}
+        else
+		{
+			System.out.println("Prix : " + this.PrixAgence + "  DA");
+		}
+		if (this.PrixPropose >100000) {
+			System.out.println("Prix Propose : " + this.PrixPropose/10 + " x10 DA");
+		}
+		else
+		{
+			System.out.println("Prix propose : " + this.PrixPropose + "  DA");
+		}
+
         if (this.negociable) System.out.println("Negociable");
         else System.out.println("Non Negociable");
 

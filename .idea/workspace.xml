@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/notDuplex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/superficieHabitableNotSupTotale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Agence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Agence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Avendre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Avendre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Cnature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Cnature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Echange.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Echange.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Location.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Nature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Nature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/NatureTransaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/NatureTransaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Utilisateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Utilisateur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/empty.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/empty.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Avendre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Avendre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appartement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appartement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BiensImmobiliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BiensImmobiliers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Echange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Echange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proprietaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proprietaire.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

@@ -1,6 +1,10 @@
 public class Echange extends NatureTransaction {
     private static Nature nature=Nature.Echange;
-    
+    private Wilaya wilayaDEchange;
+
+    public Echange(Wilaya wilayaDEchange){
+        this.wilayaDEchange=wilayaDEchange;
+    }
     public void afficherNature() {
         System.out.println(nature);
     }
@@ -12,11 +16,11 @@ public class Echange extends NatureTransaction {
         {
             a= calculerPrix((Appartement)b);
         }
-        if (b instanceof Maison)
+        else if (b instanceof Maison)
         {
             a= calculerPrix((Maison) b);
         }
-        if (b instanceof Inhabitable)
+        else if (b instanceof Inhabitable)
         {
             a= calculerPrix((Inhabitable) b);
         }
@@ -26,20 +30,43 @@ public class Echange extends NatureTransaction {
 
     public float calculerPrix(Appartement appartement) {
         Avendre avendre=new Avendre();
-        return avendre.calculerPrix(appartement);
+        if (appartement.getWilaya()!=this.wilayaDEchange)
+        {   float a =0;
 
+            a += 0.0025 * appartement.getPrixPropose();
+            return avendre.calculerPrix(appartement)+a;
+        }
+        else {
+            return avendre.calculerPrix(appartement);
+        }
     }
 
     
     public float calculerPrix(Maison maison) {
         Avendre avendre=new Avendre();
-        return avendre.calculerPrix(maison);
+        if (maison.getWilaya()!=this.wilayaDEchange)
+        {   float a =0;
+
+            a += 0.0025 * maison.getPrixPropose();
+            return avendre.calculerPrix(maison)+a;
+        }
+        else {
+            return avendre.calculerPrix(maison);
+        }
     }
 
   
     public float calculerPrix(Inhabitable inhabitable) {
         Avendre avendre=new Avendre();
-        return avendre.calculerPrix(inhabitable);
+        if (inhabitable.getWilaya()!=this.wilayaDEchange)
+        {   float a =0;
+
+            a += 0.0025 * inhabitable.getPrixPropose();
+            return avendre.calculerPrix(inhabitable)+a;
+        }
+        else {
+            return avendre.calculerPrix(inhabitable);
+        }
     }
 }
 

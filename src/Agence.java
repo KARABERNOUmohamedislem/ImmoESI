@@ -10,6 +10,9 @@ public class Agence {
  private  ArrayList<Proprietaire> listProprietaire =new ArrayList<Proprietaire>();
  private String nomAgence;
  private ArrayList<BiensImmobiliers> archiveBien=new ArrayList<BiensImmobiliers>();
+ private static String id="admin";
+ private static String password="1234";
+ private boolean connecte=false;
 
  public Agence(String nomAgence, Wilaya[] listWilaya)
 {
@@ -19,7 +22,17 @@ public class Agence {
 	
 }
  
- 
+ public void connecter(String id,String password)
+ {
+ 	if ((id.equals(Agence.id) )&& (password.equals(Agence.password)))
+	{
+		this.connecte=true;
+	}
+ 	else
+	{
+		System.out.println("id ou mot de pass incorrect.");
+	}
+ }
  
  
  
@@ -129,12 +142,17 @@ public void trierBien()
 
 public void ajouterProp(Proprietaire p)
 {
+	if (this.connecte){
 	int x=this.listProprietaire.size();
 	if(this.checkProp(p)==false)
 	{
 		this.listProprietaire.add(x, p);
 	}
-	
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+	}
 }
 
 
@@ -144,23 +162,35 @@ public void ajouterProp(Proprietaire p)
 
 public void ajouterBien(BiensImmobiliers arg) 
 {
-    int x= this.listBien.size();
-    arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
-	this.listBien.add(x, arg);
-	this.trierBien();
-	Proprietaire p=arg.getProprietaire();
-	p.ajouteBien(arg);
-	this.ajouterProp(p);
+	if (this.connecte) {
+		int x = this.listBien.size();
+		arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
+		this.listBien.add(x, arg);
+		this.trierBien();
+		Proprietaire p = arg.getProprietaire();
+		p.ajouteBien(arg);
+		this.ajouterProp(p);
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+	}
 }
 
 
 
 public void ajouterBien(BiensImmobiliers [] arg)
 {
+	if (this.connecte){
 	int i=0;
 	for(i=0;i<arg.length;i++)
 	{
 		this.ajouterBien(arg[i]);
+	}
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
 	}
 }
 
@@ -182,7 +212,7 @@ public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,flo
 
 
 
-public void ajouterMaison(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
+/*public void ajouterMaison(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 		float prixPropose,  boolean negociable, String description,  String[] urlphoto,
 		int nbPieces, boolean meuble, int nbrEtage, boolean garage, boolean jardin, boolean piscine,
 		int superficieHabitable)
@@ -217,7 +247,7 @@ proprietaire.ajouteBien(m);
 
 	
 }
-
+*/
 
 
 
@@ -458,6 +488,7 @@ public void afficherBienProp(Proprietaire arg)
 
 public void supprimerProp(Proprietaire arg)
 {
+	if (this.connecte){
 	int i=0;
 	boolean trouv=false;
 	if(checkProp(arg)==true)
@@ -476,11 +507,17 @@ public void supprimerProp(Proprietaire arg)
 	{
 		System.out.println("couldnt find the owner");
 	}
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+	}
 }
 
 
 public void supprimerBien(BiensImmobiliers arg)
 {
+	if (this.connecte){
 	int i =0;
 	boolean trouv=false;
 	if(checkBien(arg)==true)
@@ -506,6 +543,11 @@ public void supprimerBien(BiensImmobiliers arg)
 	{
 		System.out.println("couldnt find what you are looking for");
 	}
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+	}
 }
 
 
@@ -514,6 +556,7 @@ public void supprimerBien(BiensImmobiliers arg)
 
 public void archiverBien(BiensImmobiliers arg)
 {
+	if (this.connecte){
     if (this.checkBien(arg)==true)
     {
 	int j=this.archiveBien.size();
@@ -524,6 +567,11 @@ public void archiverBien(BiensImmobiliers arg)
     {
     	System.out.println("couldnt find what you are looking for");
     }
+	}
+	else
+	{
+		System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+	}
 	
 }
 
@@ -548,7 +596,7 @@ public void affichage(ArrayList<Critere> arg)
 	}
 	catch(empty e)
 	{
-		System.out.println("there's no goods that satisfy you conditions");
+		System.out.println("there's no goods that satisfy your conditions");
 	}
 	
 }

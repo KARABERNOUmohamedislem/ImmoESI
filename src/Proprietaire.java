@@ -88,6 +88,23 @@ public class Proprietaire {
 		return true;
 	}
     
+public void supprimerBienPos(BiensImmobiliers arg)
+{
+	
+		int i =0;
+		boolean trouv=false;
+		while((i<this.listBienPossede.size())&&(trouv==false))
+		{
+			if(arg.equals(this.listBienPossede.get(i)))
+			{
+				trouv=true;
+				this.listBienPossede.remove(i);
+				
+			}
+			i++;
+		}
+		
+}
 
 
 }

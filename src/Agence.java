@@ -35,6 +35,25 @@ public ArrayList<Proprietaire> getListProprietaire() {
 
 
 
+
+
+
+public Wilaya[] getListWilaya() {
+	return listWilaya;
+}
+
+
+
+
+
+public void setListWilaya(Wilaya[] listWilaya) {
+	this.listWilaya = listWilaya;
+}
+
+
+
+
+
 public void setListProprietaire(ArrayList<Proprietaire> listProprietaire) {
 	this.listProprietaire = listProprietaire;
 }
@@ -115,10 +134,7 @@ public void ajouterProp(Proprietaire p)
 	{
 		this.listProprietaire.add(x, p);
 	}
-	else
-	{
-		System.out.println(" already exisiting owner");
-	}
+	
 }
 
 
@@ -139,6 +155,14 @@ public void ajouterBien(BiensImmobiliers arg)
 
 
 
+public void ajouterBien(BiensImmobiliers [] arg)
+{
+	int i=0;
+	for(i=0;i<arg.length;i++)
+	{
+		this.ajouterBien(arg[i]);
+	}
+}
 
 
 public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g , String[] i )
@@ -348,7 +372,7 @@ public boolean checkCritere(NbPiece arg , BiensImmobiliers arg2)
 
 
 
-public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg) throws empty
+public ArrayList<BiensImmobiliers> rechercheFiltre(ArrayList<Critere> arg) throws empty
 {
 	empty e=new empty();
 	boolean a=true;
@@ -358,27 +382,27 @@ public ArrayList<BiensImmobiliers> rechercheFiltre(Critere [] arg) throws empty
   int k=0;
   for(i=0;i<this.listBien.size();i++)
   {
-	for(j=0;j<arg.length;j++)
+	for(j=0;j<arg.size();j++)
 	{
-		if(arg[j] instanceof PrixMax)
+		if(arg.get(j) instanceof PrixMax)
 		{	
-		a=a && this.checkCritere((PrixMax)arg[j], this.listBien.get(i));
+		a=a && this.checkCritere((PrixMax)arg.get(j), this.listBien.get(i));
 		}
-		if(arg[j] instanceof PrixMin)
+		if(arg.get(j) instanceof PrixMin)
 		{	
-		a=a && this.checkCritere((PrixMin)arg[j], this.listBien.get(i));
+		a=a && this.checkCritere((PrixMin)arg.get(j), this.listBien.get(i));
 		}
-		if(arg[j] instanceof Surface)
+		if(arg.get(j) instanceof Surface)
 		{	
-		a=a && this.checkCritere((Surface)arg[j], this.listBien.get(i));
+		a=a && this.checkCritere((Surface)arg.get(j), this.listBien.get(i));
 		}
-		if(arg[j] instanceof NbPiece)
+		if(arg.get(j) instanceof NbPiece)
 		{	
-		a=a && this.checkCritere((NbPiece)arg[j], this.listBien.get(i));
+		a=a && this.checkCritere((NbPiece)arg.get(j), this.listBien.get(i));
 		}
-		if(arg[j] instanceof Cnature)
+		if(arg.get(j) instanceof Cnature)
 		{	
-		a=a && this.checkCritere((Cnature)arg[j], this.listBien.get(i));
+		a=a && this.checkCritere((Cnature)arg.get(j), this.listBien.get(i));
 		}
 		
 	}
@@ -432,6 +456,28 @@ public void afficherBienProp(Proprietaire arg)
 
 
 
+public void supprimerProp(Proprietaire arg)
+{
+	int i=0;
+	boolean trouv=false;
+	if(checkProp(arg)==true)
+	{
+		while((i<this.listProprietaire.size())&&(trouv==false))
+		{
+			if(arg.equals(this.listProprietaire.get(i)))
+			{
+				trouv=true;
+				this.listProprietaire.remove(i);
+			}
+			i++;
+		}
+	}
+	else
+	{
+		System.out.println("couldnt find the owner");
+	}
+}
+
 
 public void supprimerBien(BiensImmobiliers arg)
 {
@@ -444,11 +490,17 @@ public void supprimerBien(BiensImmobiliers arg)
 		if(arg.equals(this.listBien.get(i)))
 		{
 			trouv=true;
+			arg.getProprietaire().supprimerBienPos(arg);
 			this.listBien.remove(i);
-			
 		}
 		i++;
 	}
+	
+	if(arg.getProprietaire().getListBienPossede().size()==0)
+	{
+		this.supprimerProp(arg.getProprietaire());
+	}
+	
 	}
 	else
 	{
@@ -480,7 +532,7 @@ public void archiverBien(BiensImmobiliers arg)
 
 
 
-public void affichage(Critere[] arg)
+public void affichage(ArrayList<Critere> arg)
 {
 	ArrayList<BiensImmobiliers > b= new ArrayList<BiensImmobiliers>();
 	try

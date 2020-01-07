@@ -1,97 +1,109 @@
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
+
+
 
 public class Main {
     public static void main(String[] args) {
+    	Scanner h=new Scanner(System.in);
+    	
+    	
     	Avendre n=new Avendre();
     	Location l=new Location();
     	Echange e=new Echange();
+    	boolean nego =true;
+    	boolean nonnego=false;
+    	String[] pictures =new String[58] ;
+        ArrayList<Critere> cr =new ArrayList<Critere>();
+    	
     
-    	
-    	ArrayList<BiensImmobiliers> listBien = new ArrayList<BiensImmobiliers>();
-    	
-    	 ArrayList<Proprietaire> listProprietaire =new ArrayList<Proprietaire>();
-    	 Proprietaire p=new Proprietaire("isla01m","moh2amed","ii","al984ger");
-         Wilaya w=new Wilaya("alger",100000);
-         Proprietaire p2=new Proprietaire("isla5m","4mohamed","ii","alg899er");
-         Wilaya w2=new Wilaya("bmrds",10550000);
-         Proprietaire p3=new Proprietaire("isla89m","mo23hamed","ii","144alger");
-         Wilaya w3=new Wilaya("blida",12600000);
-         Date a= new Date(2015, 02, 24);
-         String[] tab = {"no"};
-
-         Maison m=new Maison(w, 5455, p, n, 9855, false, "jgf", a, tab, 5, false, 5, false, 	true, true, 69);       
-         BiensImmobiliers b=new BiensImmobiliers(w, 15509, p, l, 55485,  false, "fffff", a, tab);
-         Date a1= new Date(2015, 02, 23);
-         String[] tab1 = {"no"};
-         BiensImmobiliers b1=new BiensImmobiliers(w, 15580, p2, n, 545, true,  "fffff", a1, tab1);
-         Date a2= new Date(2015, 02, 22);
-         String[] tab2 = {"no"};
-         Wilaya[] listWilaya =new Wilaya[58] ;
-         BiensImmobiliers b2=new BiensImmobiliers(w, 17550, p3, e, 5545,  false, "fffff", a2, tab2);
-      /*  listBien.add(0, b);
-        listBien.add(1, b1);
-        listBien.add(2,b2);
-        listProprietaire.add(0, p);
-        listProprietaire.add(1, p2);
-        listProprietaire.add(2, p3);
-        listWilaya[0]=w;
-        listWilaya[1]=w2;
-        listWilaya[2]=w3;*/
+        Date d1=new Date();
+        Date d2=new Date();
+        Date d3=new Date();
+        Date d4=new Date();
+        Date d5=new Date();
+        Date d6=new Date();
+        Date d7=new Date();
+        Date d8=new Date();
+         Wilaya w1=new Wilaya("alger", 100000);
+         Wilaya w2=new Wilaya("boumerdes", 60000);
+         Wilaya w3=new Wilaya("adrar", 30000);
+         Wilaya[] lesWilaya = {w1,w2,w3} ;
         
-        Agence ag=new Agence("ffff",listWilaya);
-        ag.ajouterBien(w3,55545, p3, n, 255, false, "bbbb", tab2);
-        ag.ajouterBien(b1);
-        ag.ajouterBien(m);
-        ag.ajouterBien(b2);
-
-
-       // ag.affichage();
-
-        Critere[] cr=new Critere[10];
-        NbPiece ap =new NbPiece(5);
-        PrixMin pa=new PrixMin(999999);
-        Cnature nature=new Cnature(Nature.Avendre);
-
-        cr[0]=nature;
-        cr[1]=pa;
+         Proprietaire p1 =new Proprietaire("aaa", "bbb", "aaabbb@esi.dz", "alger");
+         Proprietaire p2 =new Proprietaire("ccc", "ddd", "cccddd@esi.dz", "ouadsmar");
+         Proprietaire p3 =new Proprietaire("eee", "fff", "eeefff@esi.dz", "baraki");
+         Proprietaire p4 =new Proprietaire("hhh", "jjj", "hhhjjj@esi.dz", "babzouar");
+         
+         BiensImmobiliers b1=new Appartement(w2, 120, p2, n,4000000, nego , "un beau appartement  ", d1, pictures, 4, false, 1, false, false);
+         BiensImmobiliers b2=new Maison(w3, 200, p1, n, 10000000, nonnego, "une belle maison", d2, pictures, 0, false, 1, false, true, false, 200);
+         BiensImmobiliers b3=new Inhabitable(w1, 500, p1, n, 20000000, nonnego, "une bonne terrain", d3, pictures, 3, "leagal a exploité");
+         BiensImmobiliers b4=new Appartement(w3, 100, p3,l, 40000, nonnego, "un beau appartement", d4, pictures, 3, false, 1, false, false);
+         BiensImmobiliers b5=new Maison(w2, 160, p3, l, 150000, nonnego, "ffffff", d5, pictures, 0, false, 1, false, false, true, 160);
+         BiensImmobiliers b6=new Appartement(w3, 50, p2, l, 600000, nonnego, "hhhhhh", d6, pictures, 1, false, 6, false, false);
+         BiensImmobiliers b7=new Inhabitable(w1, 650, p1, e, 18000000, nonnego, "ffffff", d7, pictures, 1, "legal pour echange");
+         BiensImmobiliers b8=new Maison(w2, 200, p2, e, 14000000, nonnego, "eeeee", d8, pictures, 0, false, 1, true, false, false, 200);
+         BiensImmobiliers[] lesBien= {b5,b6,b7,b8};
+         
+         Agence a=new Agence("immoesi",lesWilaya );
+         a.ajouterBien(b1); 
+         a.ajouterBien(b2);
+         a.ajouterBien(b3);
+         a.ajouterBien(b4);
+         a.ajouterBien(lesBien);
+         System.out.println("1-afficher tous les bien de l'agence\n2-afficher les bien d'un prop\n3-supprimer quelque bien\n4-archiver un bien \n5-recherche filtre");
+         int q=h.nextInt();
+         switch (q)
+      {   
+         case 1: a.affichage(); //les biens de l'agence
+               break;
+         case 2: a.afficherBienProp(p2);//afficher les biens d'un prop
+               break;          
         
-      
-        ag.gererTransaction(m);
-        ag.afficherArchive();
-
-        Date[] dt=new Date[3];
-        dt[0]=a;
-        dt[1]=a1;
-        dt[2]=a2;
-        int x;
-        //ag.supprimerBien(b);
-
-/*for (int i = 0; i < listBien.size(); i++)                     //Loop for descending ordering
-	{
-		for (int j = 0; j <listBien.size(); j++)             //Loop for comparing other values        ///fpnction to sort a table 
-		{
-			if (listBien.get(j).getDate().before(listBien.get(i).getDate()) )                //Comparing other array elements
-			{
-				BiensImmobiliers tmp = listBien.get(i) ;         //Using temporary variable for storing last value
-				listBien.set(i, listBien.get(j)) ;            //replacing value
-				listBien.set(j, tmp) ;              //storing last value
-			}
-		}
-	}*/
-      /* ag.trierBien();*/
- //ag.modifierBien(b, w3, 6555, p2,n, 548, true, "vfvf", a2, tab2);
- //b.afficherBien()
-//System.out.println( b.getNatureTransaction().calculerPrix(b));
-/*b.setPrixAgence(n.calculerPrix(b));
-System.out.println(n.calculerPrixGenerale(m));
- System.out.println(b.getPrixAgence());
- //n.afficherNature();*/
-
-       
-      //m.getNatureTransaction().afficherNature();
-       //System.out.println(m.getNature().calculerPrix(m));
-        Date g=new Date();
-        System.out.println(g);
-    }
+         case 3 : a.supprimerBien(b1);  //quand on supprrime tous les bien 
+                  a.supprimerBien(b6);  //d un prop alors ce dernier est automatiquement supprimer
+                  a.supprimerBien(b8);
+               break; 
+         case 4: a.archiverBien(b3);
+               break;
+               
+         case 5:  System.out.println("recherche par prix min 1-oui 0-non ");
+                  int t=h.nextInt();
+                  if (t==1)
+                  {
+        	 
+        	          System.out.println("donne moi le prix min");
+        	          PrixMin prixmin =new PrixMin(h.nextFloat());
+        	          cr.add(prixmin);
+                  }
+                  System.out.println("recherche par prix max 1-oui 0-non");
+                  int t1 =h.nextInt();
+                  if (t1==1)
+                  {
+        	        System.out.println("donne moi prix max");
+        	        PrixMax prixmax= new PrixMax(h.nextFloat());
+                	cr.add(prixmax);
+                  }
+                  System.out.println("rechere par surface 1-oui 0-non");
+                  if(h.nextInt()==1)
+                  {
+        	       System.out.println("donne moi surface");
+        	       Surface surface=new Surface(h.nextFloat());
+        	       cr.add(surface);
+                  }
+         
+                  a.affichage(cr);
+                 break;
+      }
+         
+         
+         
+         
+         
+         
+         
+         
+        		 
+    } 	
 }

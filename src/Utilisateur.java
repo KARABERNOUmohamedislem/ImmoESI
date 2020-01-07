@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Utilisateur {
 	
-public ArrayList<BiensImmobiliers> filtrer(Agence a,Critere[] arg1) throws empty
+public ArrayList<BiensImmobiliers> filtrer(Agence a,ArrayList<Critere> arg1) throws empty
 {
 	return (a.rechercheFiltre(arg1));
 }
@@ -27,7 +27,7 @@ public void afficherRenseignement(Agence a)
 
 
 
-public void afficherRenseignement(Agence a, Critere[] arg2)
+public void afficherRenseignement(Agence a, ArrayList<Critere> arg2)
 {
 	a.affichage(arg2);
 }

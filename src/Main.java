@@ -59,11 +59,11 @@ public class Main {
              a.ajouterBien(b3);
              a.ajouterBien(b4);
              a.ajouterBien(lesBien);
-
+             a.deconnecter();
              while (!quitter) {
 
                  for (int i = 0; i < 50; ++i) System.out.println();
-                 System.out.println("1-afficher tous les bien de l'agence\n2-afficher les bien d'un prop\n3-supprimer quelque bien\n4-archiver un bien \n5-recherche filtre\n6-quitter");
+                 System.out.println("1-afficher tous les bien de l'agence\n2-afficher les bien d'un prop\n3-supprimer quelque bien\n4-archiver un bien \n5-recherche filtre\n6-modifier un bien\n7-connecter en tant qu'administrateur\n8-deconnecter\n9-quitter");
                  int q = h.nextInt();
                  switch (q) {
                      case 1:
@@ -108,8 +108,23 @@ public class Main {
                          a.affichage(cr);
                          break;
                      case 6:
+                         a.modifierBien(b8);
+                         break;
+                     case 7:
+                         System.out.println("ID : ");
+                         String id=h.next();
+                         System.out.println("Mot De Pass : ");
+                         String pswd=h.next();
+                         a.connecter(id,pswd);
+                         break;
+                     case 8:
+                         a.deconnecter();
+                         System.out.println("vous etes deconnecte.");
+                         break;
+                     case 9:
                          quitter = true;
                          System.out.println("merci pour l'utilisation de notre programme.");
+                         break;
                      default:
                          System.out.println("faux");
                  }

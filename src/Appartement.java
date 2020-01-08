@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Appartement extends Habitable {
     private int etage;
@@ -34,5 +35,44 @@ public class Appartement extends Habitable {
 
     public boolean isAscenseur() {
         return ascenseur;
+    }
+    public void modifier()
+    {
+        super.modifier();
+        Scanner h=new Scanner(System.in);
+        System.out.println("modifier modifier duplex 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("1-duplex 0-non dup");
+            if(h.nextInt()==1)
+            {
+                this.duplex=true;
+            }
+            else
+            {
+                this.duplex=false;
+            }
+        }
+        System.out.println("modifier modifier assenceur 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("1-possede 0-possede pas");
+            if(h.nextInt()==1)
+            {
+                this.ascenseur=true;
+            }
+            else
+            {
+                this.ascenseur=false;
+            }
+        }
+        System.out.println("modifier  etage 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("donne moi le neuveau etage");
+            this.etage=h.nextInt();
+        }
+        this.setPrixAgence(this.getNatureTransaction().calculerPrix(this));
+
     }
 }

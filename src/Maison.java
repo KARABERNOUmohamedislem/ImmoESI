@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Maison extends Habitable {
     private int nbrEtage;
@@ -53,5 +54,63 @@ public class Maison extends Habitable {
 
     public boolean isPiscine() {
         return piscine;
+    }
+    public void modifier()
+    {
+        super.modifier();
+        Scanner h = new Scanner(System.in);
+        System.out.println("modifier nbr etage 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("donne moi nbr etage");
+            this.nbrEtage=h.nextInt();
+        }
+        System.out.println("modifier superficer habitable 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("donne moi la nouvelle surface h&bitable");
+            this.superficieHabitable=h.nextInt();
+        }
+        System.out.println("modifier modifier garage 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("1-possede 0-possede pas");
+            if(h.nextInt()==1)
+            {
+                this.garage=true;
+            }
+            else
+            {
+                this.garage=false;
+            }
+        }
+        System.out.println("modifier modifier picine 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("1-possede 0-possede pas");
+            if(h.nextInt()==1)
+            {
+                this.piscine=true;
+            }
+            else
+            {
+                this.piscine=false;
+            }
+        }
+        System.out.println("modifier modifier jardin 1-oui 0-non");
+        if (h.nextInt()==1)
+        {
+            System.out.println("1-possede 0-possede pas");
+            if(h.nextInt()==1)
+            {
+                this.jardin=true;
+            }
+            else
+            {
+                this.jardin=false;
+            }
+        }
+        this.setPrixAgence(this.getNatureTransaction().calculerPrix(this));
+
     }
 }

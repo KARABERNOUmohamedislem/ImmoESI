@@ -27,11 +27,16 @@ public class Agence {
  	if ((id.equals(Agence.id) )&& (password.equals(Agence.password)))
 	{
 		this.connecte=true;
+		System.out.println("vous etes connecte.");
 	}
  	else
 	{
 		System.out.println("id ou mot de pass incorrect.");
 	}
+ }
+ public void deconnecter()
+ {
+ 	this.connecte=false;
  }
  
  
@@ -666,9 +671,18 @@ public void gererTransaction(BiensImmobiliers arg)
 	{
 		System.out.println("desole on n'a pas pu trouver ce bien dans notre liste des biens disponible");
 	}
-	
+
+
 }
-
-
+	public void modifierBien(BiensImmobiliers arg)
+	{
+		if (this.connecte) {
+			arg.modifier();
+		}
+		else
+		{
+			System.out.println("veulliez connecter en tant qu'un administrateur pour faire cette operation. ");
+		}
+	}
  
 }

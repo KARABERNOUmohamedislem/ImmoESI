@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Scanner;
 
 public class Inhabitable extends BiensImmobiliers {
     private int nbrFacade;
@@ -26,5 +27,23 @@ public class Inhabitable extends BiensImmobiliers {
 
     public int getNbrFacade() {
         return nbrFacade;
+    }
+    public void modifier()
+    {
+        super.modifier();
+        Scanner h=new Scanner(System.in);
+        System.out.println("modifier nbr de facade");
+        if (h.nextInt()==1)
+        {
+            System.out.println("donne moi le neuveau nbr facadz");
+            this.nbrFacade=h.nextInt();
+        }
+        System.out.println("modifier status juridique 1-oui 0-non");
+        if(h.nextInt()==1)
+        {
+            this.statusJuridique=h.next();
+        }
+        this.setPrixAgence(this.getNatureTransaction().calculerPrix(this));
+
     }
 }

@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class BiensImmobiliers {
     private Wilaya wilaya;
@@ -177,8 +178,44 @@ public class BiensImmobiliers {
 			return false;
 		return true;
 	}
-	
-	
+
+	public void modifier()
+	{
+		Scanner h=new Scanner(System.in);
+		System.out.println("modifier surface 1-oui 0-non");
+		if (h.nextInt()==1)
+		{
+			System.out.println("donne moi la nouvelle surface");
+			this.superficie=h.nextFloat();
+		}
+		System.out.println("modifier prix propsé 1-oui 0-non");
+		if(h.nextInt()==1)
+		{
+			System.out.println("donne le nouveau prix");
+			this.PrixPropose=h.nextFloat();
+
+		}
+		System.out.println("modifier modifier la negociabilité 1-oui 0-non");
+		if (h.nextInt()==1)
+		{
+			System.out.println("1-negociable 0-nonnegociable");
+			if(h.nextInt()==1)
+			{
+				this.negociable=true;
+			}
+			else
+			{
+				this.negociable=false;
+			}
+		}
+		System.out.println("modifier description 1-oui 0-non");
+		if(h.nextInt()==1)
+		{
+			this.description=h.next();
+		}
+		this.setPrixAgence(this.getNatureTransaction().calculerPrix(this));
+
+	}
 	
     
 }

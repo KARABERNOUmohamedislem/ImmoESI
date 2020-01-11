@@ -17,7 +17,10 @@ public class Proprietaire {
         this.Address=Adress;
     }
      
-    
+    public void afficherp()
+	{
+		System.out.println(this.Nom);
+	}
     
     
     

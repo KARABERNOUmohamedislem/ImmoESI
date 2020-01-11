@@ -14,10 +14,13 @@ public class BiensImmobiliers {
     private Date date;
     private String[] urlphoto;
 
-   
+
+    public BiensImmobiliers( ){}
     public BiensImmobiliers(Wilaya wilaya, float superficie, Proprietaire proprietaire,
 			NatureTransaction natureTransaction, float prixPropose,  boolean negociable,
-			String description, Date date, String[] urlphoto) {
+			String description, Date date, String[] urlphoto)throws prixNegative
+	{
+    	if (prixPropose<0)throw new prixNegative();
 		this.wilaya = wilaya;
 		this.superficie = superficie;
 		this.proprietaire = proprietaire;
@@ -194,6 +197,26 @@ public class BiensImmobiliers {
 			System.out.println("donne le nouveau prix");
 			this.PrixPropose=h.nextFloat();
 
+		}
+		System.out.println("modifier nature 1-oui 0-non");
+		if (h.nextInt()==1){
+			System.out.println("1-a vendre 2-location 3-echange");
+			int r=h.nextInt();
+			switch (r){
+				case 1:
+					Avendre n=new Avendre();
+					this.natureTransaction=n;
+					break;
+				case 2:
+					Location l=new Location();
+					this.natureTransaction=l;
+					break;
+				case 3:
+					Echange k=new Echange(this.wilaya);
+					this.natureTransaction=k;
+					break;
+
+			}
 		}
 		System.out.println("modifier modifier la negociabilité 1-oui 0-non");
 		if (h.nextInt()==1)

@@ -48,7 +48,8 @@ public ArrayList<BiensImmobiliers> getListBien() {
 
 
 public ArrayList<Proprietaire> getListProprietaire() {
-	return listProprietaire;
+
+ 	return listProprietaire;
 }
 
 
@@ -168,13 +169,18 @@ public void ajouterProp(Proprietaire p)
 public void ajouterBien(BiensImmobiliers arg) 
 {
 	if (this.connecte) {
-		int x = this.listBien.size();
-		arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
-		this.listBien.add(x, arg);
-		this.trierBien();
-		Proprietaire p = arg.getProprietaire();
-		p.ajouteBien(arg);
-		this.ajouterProp(p);
+		if (!checkBien(arg)) {
+			int x = this.listBien.size();
+			arg.setPrixAgence(arg.getNatureTransaction().calculerPrix(arg));
+			this.listBien.add(x, arg);
+			this.trierBien();
+			Proprietaire p = arg.getProprietaire();
+			p.ajouteBien(arg);
+			this.ajouterProp(p);
+		}
+		else {
+			System.out.println("ce bien existe deja");
+		}
 	}
 	else
 	{
@@ -199,7 +205,7 @@ public void ajouterBien(BiensImmobiliers [] arg)
 	}
 }
 
-
+/*
 public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,float e, boolean f, String g , String[] i )
 {
 	Date h =new Date(); //add with the current date
@@ -212,7 +218,7 @@ public void ajouterBien(Wilaya a, float b,Proprietaire c,NatureTransaction d,flo
 	this.ajouterProp(c);
 	this.trierBien();
 }
-
+*/
 
 
 
@@ -256,7 +262,7 @@ proprietaire.ajouteBien(m);
 
 
 
-
+/*
 public void ajouterTerrainInhabitable(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 			float prixPropose,  boolean negociable, String description,  String[] urlphoto,
 			int nbrFacade, String statusJuridique)
@@ -273,7 +279,7 @@ proprietaire.ajouteBien(m);
 
 	
 }
-
+*/
 
 
 

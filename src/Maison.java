@@ -13,12 +13,12 @@ public class Maison extends Habitable {
     public Maison(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 			float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,
 			int nbPieces, boolean meuble, int nbrEtage, boolean garage, boolean jardin, boolean piscine,
-			int superficieHabitable)throws superficieHabitableNotSupTotale
+			int superficieHabitable)throws superficieHabitableNotSupTotale,nbrEtageNegative,prixNegative
     {
         super(wilaya, superficie, proprietaire, natureTransaction, prixPropose,  negociable, description,
                 date, urlphoto, nbPieces, meuble);
 		if (superficieHabitable >superficie)throw new superficieHabitableNotSupTotale();
-
+        if (nbrEtage<0) throw new nbrEtageNegative();
 		this.nbrEtage = nbrEtage;
 		this.garage = garage;
 		this.jardin = jardin;

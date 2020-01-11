@@ -9,9 +9,11 @@ public class Inhabitable extends BiensImmobiliers {
 
     public Inhabitable(Wilaya wilaya, float superficie, Proprietaire proprietaire, NatureTransaction natureTransaction,
 			float prixPropose,  boolean negociable, String description, Date date, String[] urlphoto,
-			int nbrFacade, String statusJuridique) {
+			int nbrFacade, String statusJuridique)throws nbrFacadeNegative,prixNegative
+    {
 		super(wilaya, superficie, proprietaire, natureTransaction, prixPropose,  negociable, description,
 				date, urlphoto);
+		if (nbrFacade<1)throw new nbrFacadeNegative();
 		this.nbrFacade = nbrFacade;
 		this.statusJuridique = statusJuridique;
 	}

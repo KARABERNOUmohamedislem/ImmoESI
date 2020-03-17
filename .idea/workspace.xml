@@ -1,24 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="">
+    <list default="true" id="a5767df9-bece-447a-ac4e-de68ef76f85f" name="Default Changelist" comment="c">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tpPoo/UI/Accueil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tpPoo/UI/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tpPoo/UI/afficherBiens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Agence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Agence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Appartement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Appartement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BiensImmobiliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BiensImmobiliers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Habitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Habitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Inhabitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Inhabitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Maison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Proprietaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Proprietaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP Poo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TP Poo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Agence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Appartement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Avendre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/BiensImmobiliers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Cnature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Critere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Echange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Habitable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Inhabitable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Maison.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Nature.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/NatureTransaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/NbPiece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/PrixMax.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/PrixMin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Proprietaire.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Surface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Utilisateur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/Wilaya.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/empty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/notDuplex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TP Poo/superficieHabitableNotSupTotale.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Agence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Appartement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Appartement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Avendre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Avendre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BiensImmobiliers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/BiensImmobiliers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cnature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Cnature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Critere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Critere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Echange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Echange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Habitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Habitable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Inhabitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Inhabitable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Maison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Maison.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Nature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NbPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/NbPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrixMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/PrixMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrixMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/PrixMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Proprietaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Proprietaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Surface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Surface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Wilaya.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/Wilaya.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/empty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/natureTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/natureTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nbrEtageNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/nbrEtageNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nbrFacadeNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/nbrFacadeNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nbrPiecesNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/nbrPiecesNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notDuplex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/notDuplex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/prixNegative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/prixNegative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/superficieHabitableNotSupTotale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tpPoo/noyeau/superficieHabitableNotSupTotale.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +73,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -44,6 +88,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-13.0.1/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -60,18 +108,14 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tpPoo.UI.Main" />
       <module name="TP Poo" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-13.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
